@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./styles.module.css";
 import Nav from "../../components/Nav/Nav";
-import Footer from "../../components/Footer/Footer";
+import ItemList from "../../components/ItemList/ItemList";
 
 const HomeView = () => {
   return (
@@ -10,12 +10,12 @@ const HomeView = () => {
         <Nav />
       </div>
       <div>
-
-      <h1 className={styles.title}>Hello, CSS Modules!</h1>
+        <div>
+          <h1 className={styles.title}>Productos!</h1>
+          <ItemList/>
+        </div>
       </div>
-      <div>
-        <Footer />
-      </div>
+      <div></div>
     </div>
   );
 };

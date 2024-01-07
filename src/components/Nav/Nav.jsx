@@ -19,7 +19,7 @@ const Nav = () => {
         <li onClick={closeMenu}>Home</li>
         <li onClick={closeMenu}>Product</li>
         <li onClick={closeMenu}>About</li>
-      </ul>t
+      </ul>
       <button className={styles.burger} onClick={toggleMenu}>
         ☰
       </button>
