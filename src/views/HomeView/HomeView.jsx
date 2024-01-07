@@ -9,7 +9,10 @@ const HomeView = () => {
       <div>
         <Nav />
       </div>
+      <div>
+
       <h1 className={styles.title}>Hello, CSS Modules!</h1>
+      </div>
       <div>
         <Footer />
       </div>

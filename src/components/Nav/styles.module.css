@@ -1,0 +1,50 @@
+.nav {
+  margin: 0;
+}
+.navList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+.navList li {
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+/* Estilos para el menú de hamburguesa */
+.burger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Oculta el menú de hamburguesa cuando el menú normal está visible */
+.hideMenu .burger {
+  background-color: red;
+}
+
+
+
+
+/* Estilos responsive */
+@media screen and (max-width: 600px) {
+  /* Muestra el botón de hamburguesa en pantallas pequeñas */
+  .burger {
+    display: block;
+  }
+
+  /* Oculta el menú normal en pantallas pequeñas */
+  .navList {
+    display: none;
+  }
+
+  /* Muestra el menú de hamburguesa cuando está activo */
+  .hideMenu .navList {
+    display: block;
+    list-style: none;
+    padding: 0;
+  }
+}
