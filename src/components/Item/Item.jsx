@@ -46,8 +46,9 @@ const Item = ({ item, onDelete, onUpdate }) => {
       ) : (
         <div>
           <span>{item.name}</span>
-          <span>{item.isFood ? "Comida" : "Bebida"}</span>
+          <span>{item.category === "food" ? "Comida" : "Bebida"}</span>
           <span>{item.quantity}</span>
+
           <button onClick={handleEditToggle}>Editar</button>
           <button onClick={() => onDelete(item)}>Borrar</button>
         </div>

@@ -8,10 +8,9 @@ const ItemList = () => {
   const [filter, setFilter] = useState("all");
   const [sort, setSort] = useState("asc");
 
-  // Cargar elementos (simulado)
   useEffect(() => {
-    // Cargar elementos desde el archivo JSON
     setItems(productsData);
+    console.log(productsData)
   }, []);
 
   const handleDeleteItem = (itemToDelete) => {
