@@ -50,6 +50,12 @@ ul {
   vertical-align: baseline;
 }
 
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .fade-in {
   animation: fadeInAnimation 1s ease-in-out;
 }

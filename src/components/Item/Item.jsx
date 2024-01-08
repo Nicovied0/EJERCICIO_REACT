@@ -23,29 +23,34 @@ const Item = ({ item, onDelete, onUpdate }) => {
   return (
     <div>
       {isEditing ? (
-        <div>
-          <input
-            type="text"
-            name="name"
-            value={editedItem.name}
-            onChange={handleEditChange}
-          />
-          <select
-            name="category"
-            value={editedItem.category}
-            onChange={handleEditChange}
-          >
-            <option value="food">Food</option>
-            <option value="drink">Drink</option>
-          </select>
+        <div className={styles.containerEdit}>
+          <div className={styles.inputs}>
+            <input
+              type="text"
+              name="name"
+              value={editedItem.name}
+              className={styles.input}
+              onChange={handleEditChange}
+            />
+            <select
+              name="category"
+              value={editedItem.category}
+              onChange={handleEditChange}
+              className={styles.select}
+            >
+              <option value="food">Food</option>
+              <option value="drink">Drink</option>
+            </select>
 
-          <input
-            type="number"
-            name="quantity"
-            value={editedItem.quantity}
-            onChange={handleEditChange}
-          />
-          <button onClick={handleSaveEdit}>Save</button>
+            <input
+              type="number"
+              name="quantity"
+              className={styles.input}
+              value={editedItem.quantity}
+              onChange={handleEditChange}
+            />
+          </div>
+          <button onClick={handleSaveEdit}  className={styles.save}>Save</button>
         </div>
       ) : (
         <div className={styles.container}>
@@ -58,8 +63,12 @@ const Item = ({ item, onDelete, onUpdate }) => {
           </div>
 
           <div className={styles.buttons}>
-            <button onClick={handleEditToggle} className={styles.edit}>Edit</button>
-            <button onClick={() => onDelete(item)} className={styles.delete}>Delete</button>
+            <button onClick={handleEditToggle} className={styles.edit}>
+              Edit
+            </button>
+            <button onClick={() => onDelete(item)} className={styles.delete}>
+              Delete
+            </button>
           </div>
         </div>
       )}

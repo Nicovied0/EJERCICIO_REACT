@@ -33,7 +33,7 @@ const Nav = () => {
       </button>
 
       {showMenu ? (
-        <div className={`${styles.showOpen } fade-in2`}>
+        <div className={`${styles.showOpen} fade-in2`}>
           <ul className={styles.showList}>
             <li className={styles.element} onClick={() => { closeMenu(); handleNavigation("/"); }}>Home</li>
             <li className={styles.element} onClick={() => { closeMenu(); handleNavigation("/home"); }}>Products</li>
