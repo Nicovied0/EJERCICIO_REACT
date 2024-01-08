@@ -9,8 +9,8 @@ const HomeView = () => {
       <div>
         <Nav />
       </div>
-      <div>
-        <div>
+      <div className={styles.containerProducts}>
+        <div className={styles.products}>
           <h1 className={styles.title}>List of products</h1>
           <ItemList/>
         </div>

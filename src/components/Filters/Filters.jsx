@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styles from "./styles.module.css";
 
 const Filters = ({ onFilterChange, onSortChange }) => {
   const [filter, setFilter] = useState("all");
@@ -13,19 +14,29 @@ const Filters = ({ onFilterChange, onSortChange }) => {
   };
 
   return (
-    <div>
+    <div className={styles.container}>
       <div>
-        <select value={filter} onChange={(e) => handleFilterChange(e.target.value)}>
+        <select
+          className={styles["select-filter"]}
+          value={filter}
+          onChange={(e) => handleFilterChange(e.target.value)}
+        >
           <option value="all">All</option>
           <option value="food">Food</option>
           <option value="drink">Drink</option>
         </select>
       </div>
       <div>
-        <button onClick={() => handleSortChange("asc")}>
+        <button
+          className={styles["btn-sort"]}
+          onClick={() => handleSortChange("asc")}
+        >
           Lowest to highest
         </button>
-        <button onClick={() => handleSortChange("desc")}>
+        <button
+          className={styles["btn-sort"]}
+          onClick={() => handleSortChange("desc")}
+        >
           Highest to lowest
         </button>
       </div>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Item from "../Item/Item";
 import Filters from "../Filters/Filters";
 import productsData from "../../assets/data/productsData.json";
-import AddProduct from "../AddProduct/AddProduct";
+import styles from "./styles.module.css"
 
 const ItemList = () => {
   const [items, setItems] = useState([]);
@@ -11,7 +11,7 @@ const ItemList = () => {
 
   useEffect(() => {
     setItems(productsData);
-    console.log(productsData)
+    console.log(productsData);
   }, []);
 
   const handleDeleteItem = (itemToDelete) => {
@@ -43,7 +43,6 @@ const ItemList = () => {
       return item.category === "drink";
     }
   });
-  
 
   const sortedItems = filteredItems.sort((a, b) => {
     if (sort === "asc") {
@@ -53,17 +52,13 @@ const ItemList = () => {
     }
   });
 
-const handleAddProduct = (newProduct) => {
-    setItems([...items, newProduct]);
-  };
-
   return (
-    <div>
+    <div >
       <Filters
         onFilterChange={handleFilterChange}
         onSortChange={handleSortChange}
       />
-      <div>
+      <div className={styles.container}>
         {sortedItems.map((item) => (
           <Item
             key={item.id}
@@ -73,9 +68,8 @@ const handleAddProduct = (newProduct) => {
           />
         ))}
       </div>
-      
     </div>
   );
 };
-  
+
 export default ItemList;
