@@ -24,6 +24,9 @@
   .products {
     width: 100%;
   }
+  .title{
+    display: none;
+  }
   
   
 }

@@ -28,6 +28,9 @@ const Nav = () => {
         <li onClick={() => { closeMenu(); handleNavigation("/addProducts"); }}>Add product</li>
         <li onClick={() => { closeMenu(); handleNavigation("/about"); }}>About</li>
       </ul>
+      <div className={styles.icon} onClick={() => { handleNavigation("/home"); }}>
+        <h2>Products</h2>
+      </div>
       <button className={styles.burger} onClick={toggleMenu}>
         ☰
       </button>

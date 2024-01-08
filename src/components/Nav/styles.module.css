@@ -8,6 +8,11 @@
   margin: 0;
 }
 
+.icon {
+  cursor: pointer;
+  display: none;
+  font-size: 20px;
+}
 .navList li {
   margin-right: 20px;
   cursor: pointer;
@@ -53,26 +58,25 @@
   font-size: 25px;
 }
 
-/* Estilos responsive */
 @media screen and (max-width: 600px) {
-  /* Muestra el botón de hamburguesa en pantallas pequeñas */
   .nav {
     padding: 2rem;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .icon {
+    display: block;
   }
   .burger {
     display: block;
   }
 
-  /* Oculta el menú normal en pantallas pequeñas */
   .navList {
     display: none;
   }
 
-  /* Muestra el menú de hamburguesa cuando está activo */
   .hideMenu .navList {
     display: block;
     list-style: none;
