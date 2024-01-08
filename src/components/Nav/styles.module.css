@@ -3,8 +3,9 @@
 }
 .navList {
   list-style: none;
-  padding: 0;
+  padding: 2rem;
   display: flex;
+  margin: 0;
 }
 
 .navList li {
@@ -12,7 +13,6 @@
   cursor: pointer;
 }
 
-/* Estilos para el menú de hamburguesa */
 .burger {
   display: none;
   background: none;
@@ -20,18 +20,37 @@
   font-size: 1.5rem;
   cursor: pointer;
 }
-
-/* Oculta el menú de hamburguesa cuando el menú normal está visible */
-.hideMenu .burger {
-  background-color: red;
+.showOpen {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  z-index: 200;
+  background: #212121;
+  color: white;
+  top: 0;
+  left: 0;
 }
 
-
-
+.showList{
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    height: 100vh;
+    flex-wrap: nowrap;
+}
 
 /* Estilos responsive */
 @media screen and (max-width: 600px) {
   /* Muestra el botón de hamburguesa en pantallas pequeñas */
+  .nav {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
   .burger {
     display: block;
   }

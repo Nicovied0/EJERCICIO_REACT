@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const AddProduct = ({ onAdd }) => {
   const [newProduct, setNewProduct] = useState({
-    name: '',
-    category: 'food',
+    name: "",
+    category: "food",
     quantity: 0,
   });
 
@@ -14,12 +14,11 @@ const AddProduct = ({ onAdd }) => {
 
   const handleAddProduct = () => {
     onAdd(newProduct);
-    setNewProduct({ name: '', category: 'food', quantity: 0 });
+    setNewProduct({ name: "", category: "food", quantity: 0 });
   };
 
   return (
     <div>
-      <h2>Add New Product</h2>
       <input
         type="text"
         name="name"
@@ -42,7 +41,7 @@ const AddProduct = ({ onAdd }) => {
         value={newProduct.quantity}
         onChange={handleInputChange}
       />
-      <button onClick={handleAddProduct}  >Add Product</button>
+      <button onClick={handleAddProduct}>Add Product</button>
     </div>
   );
 };

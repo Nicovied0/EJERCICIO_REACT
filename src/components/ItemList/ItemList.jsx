@@ -73,11 +73,9 @@ const handleAddProduct = (newProduct) => {
           />
         ))}
       </div>
-      <div>
-        <AddProduct onAdd={handleAddProduct}/>
-      </div>
+      
     </div>
   );
 };
-
+  
 export default ItemList;
