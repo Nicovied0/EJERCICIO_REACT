@@ -26,7 +26,6 @@ const Nav = () => {
         <li onClick={() => { closeMenu(); handleNavigation("/"); }}>Home</li>
         <li onClick={() => { closeMenu(); handleNavigation("/home"); }}>Products</li>
         <li onClick={() => { closeMenu(); handleNavigation("/addProducts"); }}>Add product</li>
-        <li onClick={() => { closeMenu(); handleNavigation("/about"); }}>About</li>
       </ul>
       <div className={styles.icon} onClick={() => { handleNavigation("/home"); }}>
         <h2>Products</h2>
@@ -41,7 +40,6 @@ const Nav = () => {
             <li className={styles.element} onClick={() => { closeMenu(); handleNavigation("/"); }}>Home</li>
             <li className={styles.element} onClick={() => { closeMenu(); handleNavigation("/home"); }}>Products</li>
             <li className={styles.element} onClick={() => { closeMenu(); handleNavigation("/addProducts"); }}>Add product</li>
-            <li className={styles.element} onClick={() => { closeMenu(); handleNavigation("/about"); }}>About</li>
           </ul>
         </div>
       ) : (
