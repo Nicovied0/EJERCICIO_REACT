@@ -27,19 +27,27 @@ const Item = ({ item, onDelete, onUpdate }) => {
       storedItem.id === updatedItem.id ? updatedItem : storedItem
     );
     localStorage.setItem("storedItems", JSON.stringify(updatedItems));
+    alert(updatedItem.name + " updated correctly")
   };
 
   const handleDelete = () => {
-    onDelete(item);
     removeFromLocalStorage(item);
   };
 
   const removeFromLocalStorage = (deletedItem) => {
-    const storedItems = JSON.parse(localStorage.getItem("storedItems"));
-    const updatedItems = storedItems.filter(
-      (storedItem) => storedItem.id !== deletedItem.id
-    );
-    localStorage.setItem("storedItems", JSON.stringify(updatedItems));
+    const storedItems = JSON.parse(localStorage.getItem('storedItems'));
+    const confirmDelete = window.confirm('¿Want to delete ' + deletedItem.name + '?');
+
+    if (confirmDelete) {
+      const updatedItems = storedItems.filter(
+        (storedItem) => storedItem.id !== deletedItem.id
+      );
+      localStorage.setItem('storedItems', JSON.stringify(updatedItems));
+      onDelete(item);
+      alert('Element deleted.');
+    } else {
+      alert('Delete canceled.');
+    }
   };
 
   return (
