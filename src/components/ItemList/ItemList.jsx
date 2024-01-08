@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Item from "../Item/Item";
 import Filters from "../Filters/Filters";
-import productsData from "../../assets/data/productsData.json";
 import styles from "./styles.module.css";
+import productsData from "../../assets/data/productsData.json";
 
 const ItemList = () => {
   const [items, setItems] = useState([]);
@@ -10,9 +10,15 @@ const ItemList = () => {
   const [sort, setSort] = useState("asc");
 
   useEffect(() => {
-    setItems(productsData);
-    console.log(productsData);
+    const storedItems = JSON.parse(localStorage.getItem("storedItems"));
+    if (!storedItems) {
+      localStorage.setItem("storedItems", JSON.stringify(productsData));
+      setItems(productsData);
+    } else {
+      setItems(storedItems);
+    }
   }, []);
+
 
   const handleDeleteItem = (itemToDelete) => {
     const updatedItems = items.filter((item) => item.id !== itemToDelete.id);

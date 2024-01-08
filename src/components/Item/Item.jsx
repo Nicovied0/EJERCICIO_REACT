@@ -18,6 +18,28 @@ const Item = ({ item, onDelete, onUpdate }) => {
   const handleSaveEdit = () => {
     onUpdate(editedItem);
     setIsEditing(false);
+    updateLocalStorage(editedItem);
+  };
+
+  const updateLocalStorage = (updatedItem) => {
+    const storedItems = JSON.parse(localStorage.getItem("storedItems"));
+    const updatedItems = storedItems.map((storedItem) =>
+      storedItem.id === updatedItem.id ? updatedItem : storedItem
+    );
+    localStorage.setItem("storedItems", JSON.stringify(updatedItems));
+  };
+
+  const handleDelete = () => {
+    onDelete(item);
+    removeFromLocalStorage(item);
+  };
+
+  const removeFromLocalStorage = (deletedItem) => {
+    const storedItems = JSON.parse(localStorage.getItem("storedItems"));
+    const updatedItems = storedItems.filter(
+      (storedItem) => storedItem.id !== deletedItem.id
+    );
+    localStorage.setItem("storedItems", JSON.stringify(updatedItems));
   };
 
   return (
@@ -50,7 +72,7 @@ const Item = ({ item, onDelete, onUpdate }) => {
               onChange={handleEditChange}
             />
           </div>
-          <button onClick={handleSaveEdit}  className={styles.save}>Save</button>
+          <button onClick={handleSaveEdit} className={styles.save}>Save</button>
         </div>
       ) : (
         <div className={styles.container}>
@@ -66,7 +88,7 @@ const Item = ({ item, onDelete, onUpdate }) => {
             <button onClick={handleEditToggle} className={styles.edit}>
               Edit
             </button>
-            <button onClick={() => onDelete(item)} className={styles.delete}>
+            <button onClick={handleDelete} className={styles.delete}>
               Delete
             </button>
           </div>
