@@ -52,12 +52,8 @@ const AddProduct = ({ onAdd }) => {
         onChange={handleInputChange}
         className={styles.inputField}
       />
-      {/* <button  className={styles.addButton}>
-        Add Product
-      </button> */}
-
       <div onClick={handleAddProduct} className={styles.addButton}>
-        <Button text="Add Product"/>
+        <Button text="Add Product" />
 
       </div>
     </div>

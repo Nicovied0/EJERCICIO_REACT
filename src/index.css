@@ -50,8 +50,8 @@ ul {
   vertical-align: baseline;
 }
 
-input[type=number]::-webkit-outer-spin-button,
-input[type=number]::-webkit-inner-spin-button {
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -60,7 +60,7 @@ input[type=number]::-webkit-inner-spin-button {
   animation: fadeInAnimation 1s ease-in-out;
 }
 
-.fade-in2{
+.fade-in2 {
   animation: fadeInAnimation 0.3s ease-in-out;
 }
 @keyframes fadeInAnimation {
@@ -71,4 +71,3 @@ input[type=number]::-webkit-inner-spin-button {
     opacity: 1;
   }
 }
-

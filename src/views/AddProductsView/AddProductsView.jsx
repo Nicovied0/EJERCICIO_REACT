@@ -27,7 +27,6 @@ function AddProductsView() {
       <div className={styles.addProduct}>
         <AddProduct onAdd={handleAdd} />
       </div>
-      <div></div>
     </div>
   );
 }
