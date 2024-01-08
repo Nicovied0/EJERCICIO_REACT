@@ -93,6 +93,7 @@
 @media screen and (max-width: 550px) {
   .info {
     width: 100%;
+    font-size: 12px;
   }
   .buttons{
     padding-right: 0;
