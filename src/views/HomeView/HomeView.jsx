@@ -15,7 +15,6 @@ const HomeView = () => {
           <ItemList/>
         </div>
       </div>
-      <div></div>
     </div>
   );
 };

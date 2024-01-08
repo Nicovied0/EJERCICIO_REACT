@@ -60,9 +60,9 @@ const ItemList = () => {
       />
       <div className={styles.container}>
         <div className={styles.info}>
-          <span className={styles.name}>Name</span>
+          <span className={styles.name}>Product</span>
           <span className={styles.name}>Category</span>
-          <span className={styles.name}>Quantity</span>
+          <span className={styles.name}>Stock</span>
         </div>
         {sortedItems.map((item) => (
           <Item

@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./styles.module.css";
 import Nav from "../../components/Nav/Nav";
+import AddProduct from "../../components/AddProduct/AddProduct";
 
 function AddProductsView() {
   return (
@@ -9,7 +10,7 @@ function AddProductsView() {
         <Nav />
       </div>
       <div>
-        
+        <AddProduct/>
       </div>
       <div></div>
     </div>
