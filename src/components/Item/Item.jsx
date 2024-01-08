@@ -58,8 +58,8 @@ const Item = ({ item, onDelete, onUpdate }) => {
           </div>
 
           <div className={styles.buttons}>
-            <button onClick={handleEditToggle}>Edit</button>
-            <button onClick={() => onDelete(item)}>Delete</button>
+            <button onClick={handleEditToggle} className={styles.edit}>Edit</button>
+            <button onClick={() => onDelete(item)} className={styles.delete}>Delete</button>
           </div>
         </div>
       )}

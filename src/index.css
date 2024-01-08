@@ -6,6 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth !important;
 }
 
 code {
@@ -13,14 +14,15 @@ code {
     monospace;
 }
 
-
 :root {
   --background-color: #f0f0f0;
   --main-color: #333;
   --secondary-color: #2ecc71;
 }
 
-
+html {
+  scroll-behavior: smooth;
+}
 
 h1,
 h2,
@@ -52,6 +54,9 @@ ul {
   animation: fadeInAnimation 1s ease-in-out;
 }
 
+.fade-in2{
+  animation: fadeInAnimation 0.3s ease-in-out;
+}
 @keyframes fadeInAnimation {
   from {
     opacity: 0;
@@ -60,3 +65,4 @@ ul {
     opacity: 1;
   }
 }
+
