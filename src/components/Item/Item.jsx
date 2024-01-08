@@ -29,28 +29,31 @@ const Item = ({ item, onDelete, onUpdate }) => {
             value={editedItem.name}
             onChange={handleEditChange}
           />
-          <input
-            type="checkbox"
-            name="isFood"
-            checked={editedItem.isFood}
+          <select
+            name="category"
+            value={editedItem.category}
             onChange={handleEditChange}
-          />
+          >
+            <option value="food">Food</option>
+            <option value="drink">Drink</option>
+          </select>
+
           <input
             type="number"
             name="quantity"
             value={editedItem.quantity}
             onChange={handleEditChange}
           />
-          <button onClick={handleSaveEdit}>Guardar</button>
+          <button onClick={handleSaveEdit}>Save</button>
         </div>
       ) : (
         <div>
           <span>{item.name}</span>
-          <span>{item.category === "food" ? "Comida" : "Bebida"}</span>
+          <span>{item.category === "food" ? "Food" : "Drink"}</span>
           <span>{item.quantity}</span>
 
-          <button onClick={handleEditToggle}>Editar</button>
-          <button onClick={() => onDelete(item)}>Borrar</button>
+          <button onClick={handleEditToggle}>Edit</button>
+          <button onClick={() => onDelete(item)}>Delete</button>
         </div>
       )}
     </div>

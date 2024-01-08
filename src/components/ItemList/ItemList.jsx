@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Item from "../Item/Item";
 import Filters from "../Filters/Filters";
 import productsData from "../../assets/data/productsData.json";
+import AddProduct from "../AddProduct/AddProduct";
 
 const ItemList = () => {
   const [items, setItems] = useState([]);
@@ -52,6 +53,10 @@ const ItemList = () => {
     }
   });
 
+const handleAddProduct = (newProduct) => {
+    setItems([...items, newProduct]);
+  };
+
   return (
     <div>
       <Filters
@@ -67,6 +72,9 @@ const ItemList = () => {
             onUpdate={handleUpdateItem}
           />
         ))}
+      </div>
+      <div>
+        <AddProduct onAdd={handleAddProduct}/>
       </div>
     </div>
   );
