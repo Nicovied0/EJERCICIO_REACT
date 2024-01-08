@@ -5,7 +5,7 @@ import ItemList from "../../components/ItemList/ItemList";
 
 const HomeView = () => {
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} fade-in`}> 
       <div>
         <Nav />
       </div>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Item from "../Item/Item";
 import Filters from "../Filters/Filters";
 import productsData from "../../assets/data/productsData.json";
-import styles from "./styles.module.css"
+import styles from "./styles.module.css";
 
 const ItemList = () => {
   const [items, setItems] = useState([]);
@@ -53,12 +53,17 @@ const ItemList = () => {
   });
 
   return (
-    <div >
+    <div>
       <Filters
         onFilterChange={handleFilterChange}
         onSortChange={handleSortChange}
       />
       <div className={styles.container}>
+        <div className={styles.info}>
+          <span className={styles.name}>Name</span>
+          <span className={styles.name}>Category</span>
+          <span className={styles.name}>Quantity</span>
+        </div>
         {sortedItems.map((item) => (
           <Item
             key={item.id}

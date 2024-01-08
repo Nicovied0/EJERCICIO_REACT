@@ -1,11 +1,10 @@
 import React from "react";
 import styles from "./styles.module.css";
 import Nav from "../../components/Nav/Nav";
-import ItemList from "../../components/ItemList/ItemList";
 
 function AddProductsView() {
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} fade-in`}>
       <div>
         <Nav />
       </div>

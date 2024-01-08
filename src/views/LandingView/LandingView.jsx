@@ -12,7 +12,7 @@ const LandingView = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} fade-in`}>
       <h1 className={styles.title}>Hello,welcome to products dashboard</h1>
       <div onClick={handleClick}>
         <Button text="GO Home" />

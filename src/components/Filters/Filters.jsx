@@ -26,7 +26,7 @@ const Filters = ({ onFilterChange, onSortChange }) => {
           <option value="drink">Drink</option>
         </select>
       </div>
-      <div>
+      <div className={styles.buttonsFilters}>
         <button
           className={styles["btn-sort"]}
           onClick={() => handleSortChange("asc")}

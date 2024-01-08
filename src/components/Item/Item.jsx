@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styles from "./styles.module.css";
 
 const Item = ({ item, onDelete, onUpdate }) => {
   const [isEditing, setIsEditing] = useState(false);
@@ -47,13 +48,19 @@ const Item = ({ item, onDelete, onUpdate }) => {
           <button onClick={handleSaveEdit}>Save</button>
         </div>
       ) : (
-        <div>
-          <span>{item.name}</span>
-          <span>{item.category === "food" ? "Food" : "Drink"}</span>
-          <span>{item.quantity}</span>
+        <div className={styles.container}>
+          <div className={styles.info}>
+            <span className={styles.name}>{item.name}</span>
+            <span className={styles.name}>
+              {item.category === "food" ? "Food" : "Drink"}
+            </span>
+            <span className={styles.name}>{item.quantity}</span>
+          </div>
 
-          <button onClick={handleEditToggle}>Edit</button>
-          <button onClick={() => onDelete(item)}>Delete</button>
+          <div className={styles.buttons}>
+            <button onClick={handleEditToggle}>Edit</button>
+            <button onClick={() => onDelete(item)}>Delete</button>
+          </div>
         </div>
       )}
     </div>
